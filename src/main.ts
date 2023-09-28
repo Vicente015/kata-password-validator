@@ -1,12 +1,12 @@
 
 function checkPassword(password: string) {
-  if (password.length < 8) return false
-  if (!/[A-Z]/.test(password)) return false
-  if (!/[a-z]/.test(password)) return false
-  if (!password.includes("_")) return false
-  if (!/[0-9]/.test(password)) return false
+  const greatherOrEqualThanEight = password.length >= 8
+  const constainsUppercase = /[A-Z]/.test(password)
+  const constainsLowercase = /[a-z]/.test(password)
+  const constainsUnderscore = password.includes("_")
+  const constainsNumber = /[0-9]/.test(password)
 
-  return true;
+  return greatherOrEqualThanEight && constainsNumber && constainsUnderscore && constainsLowercase && constainsUppercase
 }
 
 export { checkPassword }

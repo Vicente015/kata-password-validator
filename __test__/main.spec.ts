@@ -9,6 +9,10 @@ describe('Password validator', () => {
     expect(checkPassword('Pass_1')).toBe(false)
   })
 
+  test('Length is 8', () => {
+    expect(checkPassword('Pass_1ed')).toBe(true)
+  })
+
   test('One uppercase', () => {
     expect(checkPassword('password_1')).toBe(false)
   })
